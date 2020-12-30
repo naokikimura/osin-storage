@@ -4,11 +4,12 @@ package postgres
 import (
 	"database/sql"
 	"fmt"
-	"github.com/RangelReale/osin"
-	"github.com/go-errors/errors"
-	"github.com/ory-am/common/pkg"
 	"log"
 	"time"
+
+	"github.com/go-errors/errors"
+	"github.com/openshift/osin"
+	"github.com/ory-am/common/pkg"
 )
 
 var schemas = []string{`CREATE TABLE IF NOT EXISTS client (
@@ -41,7 +42,7 @@ var schemas = []string{`CREATE TABLE IF NOT EXISTS client (
 	access        text NOT NULL
 )`}
 
-// Storage implements interface "github.com/RangelReale/osin".Storage and interface "github.com/ory/osin-storage".Storage
+// Storage implements interface "github.com/openshift/osin".Storage and interface "github.com/ory/osin-storage".Storage
 type Storage struct {
 	db *sql.DB
 }
